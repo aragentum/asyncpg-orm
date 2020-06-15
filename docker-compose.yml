@@ -1,0 +1,15 @@
+version: "3.7"
+
+services:
+
+  apg-orm-db:
+    container_name: apg-orm-db
+    image: postgres:10.7
+    restart: always
+    environment:
+      - POSTGRES_USER=apgorm
+      - POSTGRES_PASSWORD=apgorm123
+      - POSTGRES_DB=apgorm
+    command: ["--autovacuum=off"]
+    ports:
+      - "127.0.0.12:5432:5432"
